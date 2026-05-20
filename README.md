@@ -1,36 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Spark
 
-## Getting Started
+Spark is an AI app builder I built — you describe what you want in plain English and it puts together a working Next.js app for you, running live inside a sandbox while you watch.
 
-First, run the development server:
+Try it here: [spark-lemon-psi.vercel.app](https://spark-lemon-psi.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## About
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You chat with an AI agent that writes, edits, and runs code on your behalf. Every project spins up its own isolated sandbox so the generated app actually runs, and you can see the preview side by side with the chat and browse through the file tree to see what got built. Auth, projects, billing, and rate limiting are all wired up so the whole thing works end to end.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Built with
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js 15 (App Router), React 19 and TypeScript on the frontend, styled with Tailwind v4 and shadcn/ui. Clerk handles auth and billing, Postgres on Neon stores the data through Prisma 7, and the API layer is tRPC 11 with TanStack Query. The AI side runs in the background through Inngest and `@inngest/agent-kit`, and the generated code executes inside E2B sandboxes. GPT-5.1 powers the main code-writing agent and GPT-4o handles the smaller helper agents. Hosted on Vercel.
